@@ -15,7 +15,7 @@ function App() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Sodoo
+					Mandakhd zoriulan uurchluvuu
 				</a>
 			</header>
 		</div>
