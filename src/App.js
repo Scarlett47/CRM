@@ -16,8 +16,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import SearchIcon from '@mui/icons-material/Search';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import SplitscreenIcon from '@mui/icons-material/Splitscreen';
 import EmailIcon from '@mui/icons-material/Email';
@@ -25,11 +25,13 @@ import PersonIcon from '@mui/icons-material/Person';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import GridViewIcon from '@mui/icons-material/GridView';
 import TuneIcon from '@mui/icons-material/Tune';
-import { Settings } from '@mui/icons-material';
+import { Search, Settings } from '@mui/icons-material';
+import { Input } from '@mui/material';
 
 const drawerWidth = 240;
 const Icons = [ <DashboardIcon/>,<SplitscreenIcon/>,<EmailIcon/>,
                 <PersonIcon/>,<ChatBubbleIcon/>,<GridViewIcon/>,<TuneIcon/>]
+             
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -125,15 +127,37 @@ export default function MiniDrawer() {
               ...(open && { display: 'none' }),
             }}
           >
-            <MenuIcon />
+            <MenuIcon color='primary'/>
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
-          </Typography>
+          <Box sx={{
+            width:"60%",
+            display: "flex",
+            gap: "20px",
+            alignItems:"center"
+          }}>
+          <SearchIcon color="primary"/ >
+          <Input  type='search' placeholder='Global search'/>
+          </Box>
+          <Box sx={{
+            display: "flex",
+            width:"40%",
+            justifyContent:"flex-end"
+          }}>5114330398
+          <IconButton>
+          <NotificationsNoneIcon color="primary"/>
+          </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader color="secondary">
+          <Typography  sx={{
+            marginRight: "50px",
+            fontWeight: 600,
+            fontSize: "18px",
+            lineHeight: "25px",
+            color: "#109CF1",
+          }}>Saas Kit</Typography>
           <IconButton color="secondary" onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
@@ -164,11 +188,16 @@ export default function MiniDrawer() {
           ))}
         </List>
         <Divider />
-
       </Drawer>
-      <Box>
+
+      <Box sx={{
+        marginTop: "100px",
+        marginLeft: "100px",
+        position:'fixed',
+      }}>
         Mandakh
       </Box>
+      
     </Box>
   );
 }
