@@ -27,6 +27,7 @@ import GridViewIcon from "@mui/icons-material/GridView";
 import TuneIcon from "@mui/icons-material/Tune";
 import { Search, Settings } from "@mui/icons-material";
 import { Input } from "@mui/material";
+import Contact from "./Pages/Contact";
 
 const drawerWidth = 240;
 const Icons = [
@@ -219,7 +220,7 @@ export default function MiniDrawer() {
 					position: "fixed",
 				}}
 			>
-				Mandakh
+				<Contact/>
 			</Box>
 		</Box>
 	);
