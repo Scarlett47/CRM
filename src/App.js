@@ -1,4 +1,5 @@
 import * as React from "react";
+import Dashboard from "./Pages/Dashboard";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -219,7 +220,7 @@ export default function MiniDrawer() {
 					position: "fixed",
 				}}
 			>
-				Mandakh
+				<Dashboard />
 			</Box>
 		</Box>
 	);
