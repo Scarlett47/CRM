@@ -6,13 +6,24 @@ import NativeSelect from '@mui/material/NativeSelect';
 import { format } from 'date-fns';
 
 function Dashboard() {
-  const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+  const longEnUSFormatter = new Intl.DateTimeFormat('en-GB', {
+    dateStyle: 'full',
   });
   const date = longEnUSFormatter.format(new Date());
-
+  const names = [];
+  const dateName = [
+    { id: '1', dName: 'Mon' },
+    { id: '2', dName: 'Tue' },
+    { id: '3', dName: 'Wed' },
+    { id: '4', dName: 'Thu' },
+    { id: '5', dName: 'Fri' },
+    { id: '6', dName: 'Sat' },
+    { id: '7', dName: 'Sun' },
+  ];
+  dateName.forEach((data) => {
+    if (data.id == new Date().getDay()) {
+    }
+  });
   return (
     <>
       <Box
@@ -64,6 +75,7 @@ function Dashboard() {
         </Box>
         <LinearProgress
           variant='buffer'
+          valueBuffer={100}
           value={80}
           color='success'
           sx={{
@@ -81,6 +93,11 @@ function Dashboard() {
         >
           {date}
         </Typography>
+        <Box>
+          <Box>
+            <Typography>{names}</Typography>
+          </Box>
+        </Box>
       </Box>
     </>
   );
