@@ -1,9 +1,13 @@
 import * as React from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import { useDataGridProps } from '@mui/x-data-grid/DataGrid/useDataGridProps';
-import { grey, red } from '@mui/material/colors';
+import {  } from '@mui/material/Avatar';
 const columns = [
+
     { field: 'id', headerName: 'ID', width: 70 },
+    {field: 'photoURL', headerName: '', width:60,renderCell: (params) => <Avatar src={params.row.photoURL}/>,
+    sortable:false,
+    filterable:false,},
     { field: 'name', headerName: 'Name',  width: 130 },
     { field: 'email', headerName: 'Email',color:'#ff5722', width: 130, },
     { field: 'company', headerName: 'Company', width: 130 },
@@ -17,7 +21,7 @@ const columns = [
 ];
 
 const rows = [
-    { id: 1, name: 'Lannister', email: 'Snow', company: 'Jon', role: 'Manager', forecast: '50%',recentactivity: '5 Minutes ago', },
+    { id: 1, photoURL: (photoURL), name: 'Lannister', email: 'Snow', company: 'Jon', role: 'Manager', forecast: '50%',recentactivity: '5 Minutes ago', },
     { id: 2, name: 'Lannister', email: 'Lannister', company: 'Cersei', role: 'Manager', forecast: '50%',recentactivity:'5 Minutes ago', },
     { id: 3, name: 'Lannister', email: 'Lannister', company: 'Jaime', role: 'Manager', forecast: '50%',recentactivity:'5 Minutes ago', },
     { id: 4, name: 'Lannister', email: 'Stark', company: 'Arya', role: 'Manager', forecast: '50%', recentactivity:'5 Minutes ago', },
