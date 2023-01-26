@@ -4,6 +4,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
+import {
+	LineChart,
+	Line,
+	CartesianGrid,
+	XAxis,
+	YAxis,
+	Tooltip,
+} from "recharts";
 
 function Dashboard() {
 	const longEnUSFormatter = new Intl.DateTimeFormat("en-GB", {
@@ -20,8 +28,13 @@ function Dashboard() {
 		{ id: "6", dName: "Sat" },
 		{ id: "7", dName: "Sun" },
 	];
-
-	console.log(new Date().getDay());
+	const data = [
+		{ name: "2019", uv: 300, pv: 2400, amt: 2400 },
+		{ name: "2020", uv: 400, pv: 2400, amt: 2400 },
+		{ name: "2021", uv: 200, pv: 2400, amt: 2400 },
+		{ name: "2022", uv: 100, pv: 2400, amt: 2400 },
+		{ name: "2023", uv: 400, pv: 2400, amt: 2400 },
+	];
 	return (
 		<>
 			<Box
@@ -276,6 +289,88 @@ function Dashboard() {
 						</Box>
 					</Box>
 				</Box>
+			</Box>
+			<Box
+				sx={{
+					width: "650px",
+					height: "350px",
+					boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.08)",
+					borderRadius: "4px",
+				}}
+			>
+				{/* <Box
+					sx={{
+						width: "100%",
+						height: "50px",
+						backgroundColor: "green",
+						display: "flex",
+						justifyContent: "space-between",
+					}}
+				>
+					<Typography>Deals</Typography>
+				</Box> */}
+
+				<Box
+					sx={{
+						width: "100%",
+						height: "50px",
+						display: "flex",
+						justifyContent: "space-between",
+						paddingTop: "10px",
+						boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.08)",
+						borderRadius: "4px",
+					}}
+				>
+					<Typography
+						sx={{
+							fontWeight: 600,
+							fontSize: "18px",
+							lineHeight: "25px",
+							paddingBottom: "10px",
+						}}
+					>
+						Deals
+					</Typography>
+					<Typography
+						sx={{
+							fontWeight: 600,
+							fontSize: "18px",
+							lineHeight: "25px",
+							paddingBottom: "10px",
+						}}
+					>
+						Show:{" "}
+						<FormControl>
+							<NativeSelect
+								defaultValue={1}
+								disableUnderline
+								sx={{
+									marginTop: "-4px",
+									fontWeight: 600,
+									fontSize: "18px",
+									color: "#109CF1",
+								}}
+							>
+								<option value={1}>This week</option>
+								<option value={2}>This months</option>
+								<option value={3}>This year</option>
+							</NativeSelect>
+						</FormControl>
+					</Typography>
+				</Box>
+				<br />
+				<LineChart
+					width={600}
+					height={300}
+					data={data}
+					margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+				>
+					<Line type="monotone" dataKey="uv" stroke="#8884d8" />
+					<CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+					<XAxis dataKey="name" />
+					<YAxis />
+					<Tooltip />
+				</LineChart>
 			</Box>
 		</>
 	);
