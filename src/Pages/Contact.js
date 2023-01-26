@@ -7,7 +7,7 @@ const columns = [
 
 
     {
-        field: 'photoURL', headerName: '', width: 10, renderCell: (params) => <Avatar src={params.row.photoURL} />,
+        field: 'photoURL', headerName: '', width: 10, renderCell: (params) => <Avatar src={"https://variety.com/wp-content/uploads/2022/11/Screen-Shot-2022-11-02-at-8.33.52-AM.png"} />,
         sortable: false,
         filterable: false,
     },
@@ -28,7 +28,7 @@ const rows = [
     {
         id: 1, photoURL: (<Avatar
             alt="Remy Sharp"
-            src="./photo/pic1.jpg"
+            src="https://variety.com/wp-content/uploads/2022/11/Screen-Shot-2022-11-02-at-8.33.52-AM.png"
             sx={{ width: 56, height: 56 }}
         />), name: 'Lannister', email: 'Snow', company: 'Jon', role: 'Manager', forecast: '50%', recentactivity: '5 Minutes ago',
     },
@@ -44,7 +44,7 @@ const rows = [
 
 export default function DataTable() {
     return (
-        <div style={{ height: 400, width: 1000 }}>
+        <div style={{ height: 600, width: 1000 }}>
             <DataGrid
                 rows={useDataGridProps && rows}
                 columns={columns}
