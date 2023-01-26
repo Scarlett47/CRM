@@ -28,6 +28,7 @@ import TuneIcon from "@mui/icons-material/Tune";
 import { Search, Settings } from "@mui/icons-material";
 import { Input } from "@mui/material";
 import Contact from "./Pages/Contact";
+import { Route, Routes, useNavigate } from "react-router";
 
 const drawerWidth = 240;
 const Icons = [
@@ -108,7 +109,7 @@ const Drawer = styled(MuiDrawer, {
 export default function MiniDrawer() {
 	const theme = useTheme();
 	const [open, setOpen] = React.useState(false);
-
+	const navigate = useNavigate();
 	const handleDrawerOpen = () => {
 		setOpen(true);
 	};
@@ -185,31 +186,39 @@ export default function MiniDrawer() {
 					</IconButton>
 				</DrawerHeader>
 				<Divider />
+				{/*["Dashboard", "Tasks", "Email", "Contact", "Chat", "Deals"] */}
 				<List>
-					{["Dashboard", "Tasks", "Email", "Contact", "Chat", "Deals"].map(
-						(text, index) => (
-							<ListItem key={text} disablePadding sx={{ display: "block" }}>
-								<ListItemButton
+					{navItems.map((e, index) => (
+						<ListItem
+							href={e.href}
+							key={index}
+							disablePadding
+							sx={{ display: "block" }}
+						>
+							<ListItemButton
+								onClick={() => navigate(e.href)}
+								sx={{
+									minHeight: 48,
+									justifyContent: open ? "initial" : "center",
+									px: 2.5,
+								}}
+							>
+								<ListItemIcon
 									sx={{
-										minHeight: 48,
-										justifyContent: open ? "initial" : "center",
-										px: 2.5,
+										minWidth: 0,
+										mr: open ? 3 : "auto",
+										justifyContent: "center",
 									}}
 								>
-									<ListItemIcon
-										sx={{
-											minWidth: 0,
-											mr: open ? 3 : "auto",
-											justifyContent: "center",
-										}}
-									>
-										{Icons[index]}
-									</ListItemIcon>
-									<ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-								</ListItemButton>
-							</ListItem>
-						),
-					)}
+									{/* {Icons[index]} */}
+								</ListItemIcon>
+								<ListItemText
+									primary={e.label}
+									sx={{ opacity: open ? 1 : 0 }}
+								/>
+							</ListItemButton>
+						</ListItem>
+					))}
 				</List>
 				<Divider />
 			</Drawer>
@@ -217,11 +226,19 @@ export default function MiniDrawer() {
 				sx={{
 					marginTop: "100px",
 					marginLeft: "100px",
-					position: "fixed",
 				}}
 			>
-				<Contact/>
+				<Routes>
+					<Route path="/contact" element={<Contact />} />
+				</Routes>
 			</Box>
 		</Box>
 	);
 }
+
+const navItems = [
+	{
+		label: "Contact",
+		href: "/contact",
+	},
+];
