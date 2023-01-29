@@ -2,7 +2,48 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDataGridProps } from "@mui/x-data-grid/DataGrid/useDataGridProps";
 import Avatar from "@mui/material/Avatar";
-import { FormControl, NativeSelect } from "@mui/material";
+import { createRoot } from 'react-dom/client';
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown, Space, Typography } from "antd";
+import { MenuProps } from "@mui/material";
+
+
+
+createRoot(document.getElementById('container')).render(<Demo />);
+
+const items: MenuProps["items"] = [
+  {
+    key: "1",
+    label: "Item 1"
+  },
+  {
+    key: "2",
+    label: "Item 2"
+  },
+  {
+    key: "3",
+    label: "Item 3"
+  }
+];
+
+const app: React.FC = () => (
+  <Dropdown
+    menu={{
+      items,
+      selectable: true,
+      defaultSelectedKeys: ["3"]
+    }}
+  >
+    <Typography.Link>
+      <Space>
+        Selectable
+        <DownOutlined />
+      </Space>
+    </Typography.Link>
+  </Dropdown>
+);
+
+
 const columns = [
 	{
 		field: "photoURL",
@@ -31,25 +72,7 @@ const columns = [
 	{ field: "recentactivity", headerName: "Recent activity", width: 160 },
 ];
 
-<>
-Show: { " " }
-<FormControl>
-	<NativeSelect
-		defaultValue={1}
-		disableUnderline
-		sx={{
-			marginTop: "-4px",
-			fontWeight: 600,
-			fontSize: "18px",
-			color: "#109CF1",
-		}}
-	>
-		<option value={1}>This week</option>
-		<option value={2}>This months</option>
-		<option value={3}>This year</option>
-	</NativeSelect>
-</FormControl>
-</>
+
 const rows = [
 	{
 		id: 1,
@@ -140,6 +163,7 @@ const rows = [
 		recentactivity: "5 Minutes ago",
 	},
 ];
+<app/>
 
 export default function DataTable() {
 	return (
