@@ -1,10 +1,9 @@
 import React from 'react'
+import Sidenav from '../Sidenav'
 
 function Dashboard() {
   return (
-    <div style={{
-        color:"black"
-    }}>Dashboard</div>
+    <div><Sidenav/>Dashboard</div>
   )
 }
 
