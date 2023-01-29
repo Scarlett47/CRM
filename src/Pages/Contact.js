@@ -2,6 +2,7 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDataGridProps } from "@mui/x-data-grid/DataGrid/useDataGridProps";
 import Avatar from "@mui/material/Avatar";
+import { FormControl, NativeSelect } from "@mui/material";
 const columns = [
 	{
 		field: "photoURL",
@@ -30,6 +31,25 @@ const columns = [
 	{ field: "recentactivity", headerName: "Recent activity", width: 160 },
 ];
 
+<>
+Show: { " " }
+<FormControl>
+	<NativeSelect
+		defaultValue={1}
+		disableUnderline
+		sx={{
+			marginTop: "-4px",
+			fontWeight: 600,
+			fontSize: "18px",
+			color: "#109CF1",
+		}}
+	>
+		<option value={1}>This week</option>
+		<option value={2}>This months</option>
+		<option value={3}>This year</option>
+	</NativeSelect>
+</FormControl>
+</>
 const rows = [
 	{
 		id: 1,
