@@ -210,7 +210,7 @@ export default function MiniDrawer() {
 										justifyContent: "center",
 									}}
 								>
-									{/* {Icons[index]} */}
+									{Icons[index]}
 								</ListItemIcon>
 								<ListItemText
 									primary={e.label}
