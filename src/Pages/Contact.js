@@ -3,11 +3,14 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useDataGridProps } from "@mui/x-data-grid/DataGrid/useDataGridProps";
 import Avatar from "@mui/material/Avatar";
 import { DownOutlined } from '@ant-design/icons';
-import { Dropdown, Space, Typography } from 'antd';
+import { Dropdown, Space, Typography, Button, } from 'antd';
+
+
+
 const items = [
 	{
 		key: '1',
-		label: 'Item 1',
+		label: 'All',
 	},
 	{
 		key: '2',
@@ -17,8 +20,9 @@ const items = [
 		key: '3',
 		label: 'Item 3',
 	},
-];
+]; 
 const App = () => (
+	
 	<Dropdown
 		menu={{
 			items,
@@ -27,13 +31,16 @@ const App = () => (
 		}}
 	>
 		<Typography.Link>
+		
 			<Space>
-				 All
+				All
 				<DownOutlined />
 			</Space>
 		</Typography.Link>
 	</Dropdown>
 );
+
+
 
 const columns = [
 	{
@@ -160,6 +167,9 @@ export default function DataTable() {
 	return (
 		<div style={{ height: 600, width: 1000 }}>
 			<App/>
+			<Button type="primary" size={70} >
+            Primary
+          </Button>
 			<DataGrid
 				rows={useDataGridProps && rows}
 				columns={columns}
@@ -168,6 +178,7 @@ export default function DataTable() {
 				getRowId={false}
 				checkboxSelection
 			/>
+			 
 		</div>
 	);
 }
