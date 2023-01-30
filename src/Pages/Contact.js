@@ -2,46 +2,38 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDataGridProps } from "@mui/x-data-grid/DataGrid/useDataGridProps";
 import Avatar from "@mui/material/Avatar";
-import { createRoot } from 'react-dom/client';
-import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space, Typography } from "antd";
-import { MenuProps } from "@mui/material";
-
-
-
-createRoot(document.getElementById('container')).render(<Demo />);
-
-const items= MenuProps["items"] = [
-  {
-    key: "1",
-    label: "Item 1"
-  },
-  {
-    key: "2",
-    label: "Item 2"
-  },
-  {
-    key: "3",
-    label: "Item 3"
-  }
+import { DownOutlined } from '@ant-design/icons';
+import { Dropdown, Space, Typography } from 'antd';
+const items = [
+	{
+		key: '1',
+		label: 'Item 1',
+	},
+	{
+		key: '2',
+		label: 'Item 2',
+	},
+	{
+		key: '3',
+		label: 'Item 3',
+	},
 ];
-
-// const app: React.FC = () => (
-//   <Dropdown
-//     menu={{
-//       items,
-//       selectable: true,
-//       defaultSelectedKeys: ["3"]
-//     }}
-//   >
-//     <Typography.Link>
-//       <Space>
-//         Selectable
-//         <DownOutlined />
-//       </Space>
-//     </Typography.Link>
-//   </Dropdown>
-// );
+const App = () => (
+	<Dropdown
+		menu={{
+			items,
+			selectable: true,
+			defaultSelectedKeys: ['3'],
+		}}
+	>
+		<Typography.Link>
+			<Space>
+				 All
+				<DownOutlined />
+			</Space>
+		</Typography.Link>
+	</Dropdown>
+);
 
 const columns = [
 	{
@@ -167,20 +159,7 @@ const rows = [
 export default function DataTable() {
 	return (
 		<div style={{ height: 600, width: 1000 }}>
-			   <Dropdown
-				menu={{
-					items,
-					selectable: true,
-					defaultSelectedKeys: ["3"]
-				}}
-			>
-				<Typography.Link>
-					<Space>
-						Selectable
-						<DownOutlined />
-					</Space>
-				</Typography.Link>
-			</Dropdown>
+			<App/>
 			<DataGrid
 				rows={useDataGridProps && rows}
 				columns={columns}
