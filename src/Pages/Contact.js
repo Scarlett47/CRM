@@ -11,7 +11,7 @@ import { MenuProps } from "@mui/material";
 
 createRoot(document.getElementById('container')).render(<Demo />);
 
-const items: MenuProps["items"] = [
+const items= MenuProps["items"] = [
   {
     key: "1",
     label: "Item 1"
@@ -26,23 +26,22 @@ const items: MenuProps["items"] = [
   }
 ];
 
-const app: React.FC = () => (
-  <Dropdown
-    menu={{
-      items,
-      selectable: true,
-      defaultSelectedKeys: ["3"]
-    }}
-  >
-    <Typography.Link>
-      <Space>
-        Selectable
-        <DownOutlined />
-      </Space>
-    </Typography.Link>
-  </Dropdown>
-);
-
+// const app: React.FC = () => (
+//   <Dropdown
+//     menu={{
+//       items,
+//       selectable: true,
+//       defaultSelectedKeys: ["3"]
+//     }}
+//   >
+//     <Typography.Link>
+//       <Space>
+//         Selectable
+//         <DownOutlined />
+//       </Space>
+//     </Typography.Link>
+//   </Dropdown>
+// );
 
 const columns = [
 	{
@@ -163,11 +162,25 @@ const rows = [
 		recentactivity: "5 Minutes ago",
 	},
 ];
-<app/>
+<app />
 
 export default function DataTable() {
 	return (
 		<div style={{ height: 600, width: 1000 }}>
+			   <Dropdown
+				menu={{
+					items,
+					selectable: true,
+					defaultSelectedKeys: ["3"]
+				}}
+			>
+				<Typography.Link>
+					<Space>
+						Selectable
+						<DownOutlined />
+					</Space>
+				</Typography.Link>
+			</Dropdown>
 			<DataGrid
 				rows={useDataGridProps && rows}
 				columns={columns}
