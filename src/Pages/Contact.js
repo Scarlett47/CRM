@@ -2,36 +2,32 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDataGridProps } from "@mui/x-data-grid/DataGrid/useDataGridProps";
 import Avatar from "@mui/material/Avatar";
-import { DownOutlined } from '@ant-design/icons';
-import { Dropdown, Space, Typography, Button, } from 'antd';
-
-
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown, Space, Typography, Button } from "antd";
 
 const items = [
 	{
-		key: '1',
-		label: 'All',
+		key: "1",
+		label: "All",
 	},
 	{
-		key: '2',
-		label: 'Item 2',
+		key: "2",
+		label: "Item 2",
 	},
 	{
-		key: '3',
-		label: 'Item 3',
+		key: "3",
+		label: "Item 3",
 	},
-]; 
+];
 const App = () => (
-	
 	<Dropdown
 		menu={{
 			items,
 			selectable: true,
-			defaultSelectedKeys: ['3'],
+			defaultSelectedKeys: ["3"],
 		}}
 	>
 		<Typography.Link>
-		
 			<Space>
 				All
 				<DownOutlined />
@@ -39,8 +35,6 @@ const App = () => (
 		</Typography.Link>
 	</Dropdown>
 );
-
-
 
 const columns = [
 	{
@@ -69,7 +63,6 @@ const columns = [
 	{ field: "forecast", headerName: "Forecast", width: 130 },
 	{ field: "recentactivity", headerName: "Recent activity", width: 160 },
 ];
-
 
 const rows = [
 	{
@@ -161,15 +154,15 @@ const rows = [
 		recentactivity: "5 Minutes ago",
 	},
 ];
-<app />
+<app />;
 
 export default function DataTable() {
 	return (
 		<div style={{ height: 600, width: 1000 }}>
-			<App/>
-			<Button type="primary" size={70} >
-            Primary
-          </Button>
+			<App />
+			<Button type="primary" size={70}>
+				Primary
+			</Button>
 			<DataGrid
 				rows={useDataGridProps && rows}
 				columns={columns}
@@ -178,7 +171,6 @@ export default function DataTable() {
 				getRowId={false}
 				checkboxSelection
 			/>
-			 
 		</div>
 	);
 }
