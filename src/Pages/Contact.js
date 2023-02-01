@@ -134,9 +134,11 @@ export default function DataTable() {
 			<div style={{ display: "flex", justifyContent: "space-between" }}>
 				<Select
 					defaultValue="lucy"
+					placeholder="Company:"
 					style={{
 						width: 120,
 					}}
+					
 					bordered={false}
 					onChange={handleChange}
 					options={[
