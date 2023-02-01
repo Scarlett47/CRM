@@ -3,39 +3,12 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useDataGridProps } from "@mui/x-data-grid/DataGrid/useDataGridProps";
 import Avatar from "@mui/material/Avatar";
 import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space, Typography, Button } from "antd";
+import { Dropdown, Space, Select, Button } from "antd";
+import { flexbox } from "@mui/system";
 
-const items = [
-	{
-		key: "1",
-		label: "All",
-	},
-	{
-		key: "2",
-		label: "Item 2",
-	},
-	{
-		key: "3",
-		label: "Item 3",
-	},
-];
-const App = () => (
-	<Dropdown
-		menu={{
-			items,
-			selectable: true,
-			defaultSelectedKeys: ["3"],
-		}}
-	>
-		<Typography.Link>
-			<Space>
-				All
-				<DownOutlined />
-			</Space>
-		</Typography.Link>
-	</Dropdown>
-);
-
+const handleChange = (value) => {
+	console.log(`selected ${value}`);
+};
 const columns = [
 	{
 		field: "photoURL",
@@ -154,15 +127,41 @@ const rows = [
 		recentactivity: "5 Minutes ago",
 	},
 ];
-<app />;
 
 export default function DataTable() {
 	return (
 		<div style={{ height: 600, width: 1000 }}>
-			<App />
-			<Button type="primary" size={70}>
-				Primary
-			</Button>
+			<div style={{ display: "flex", justifyContent: "space-between" }}>
+				<Select
+					defaultValue="lucy"
+					style={{
+						width: 120,
+					}}
+					bordered={false}
+					onChange={handleChange}
+					options={[
+						{
+							value: "jack",
+							label: "Jack",
+						},
+						{
+							value: "lucy",
+							label: "Lucy",
+						},
+						{
+							value: "Yiminghe",
+							label: "yiminghe",
+						},
+						{
+							value: "disabled",
+							label: "Disabled",
+						},
+					]}
+				/>
+				<Button type="primary" size={70}>
+					Primary
+				</Button>
+			</div>
 			<DataGrid
 				rows={useDataGridProps && rows}
 				columns={columns}
