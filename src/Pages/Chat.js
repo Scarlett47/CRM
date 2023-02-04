@@ -1,7 +1,12 @@
-import React from 'react'
+import * as React from 'react'
+import { Title } from '@mui/icons-material'
+import { Button } from 'antd'
+import Avatar from '@mui/material/Avatar'
 
 export default function Chat() {
+    <p>fsdfsdfs</p>
   return (
+    <p>fdfsfs</p>,
     <div className="smallBox">
 						<div style={{ display: "flex", justifyContent: "space-between" }}>
 							<Title style={{ margin: 0, paddingLeft: 10 }} level={4}>
@@ -53,3 +58,4 @@ export default function Chat() {
 					</div>
   )
 }
+console.log("sdasdada")
