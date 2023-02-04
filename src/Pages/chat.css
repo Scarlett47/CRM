@@ -1,3 +1,7 @@
-.smallBox{
-    background-color: black;
-}
+.smallBox {
+	width: 500px;
+	height: 139px;
+	margin: auto;
+	background: #ffffff;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+	border-radius: 4px;}
