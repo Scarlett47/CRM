@@ -188,13 +188,14 @@ export default function MiniDrawer() {
 				</DrawerHeader>
 				<Divider />
 				{/*["Dashboard", "Tasks", "Email", "Contact", "Chat", "Deals"] */}
+				
 				<List>
 					{navItems.map((e, index) => (
 						<ListItem
-							href={e.href}
-							key={index}
-							disablePadding
-							sx={{ display: "block" }}
+						href={e.href}
+						key={index}
+						disablePadding
+						sx={{ display: "block" }}
 						>
 							<ListItemButton
 								onClick={() => navigate(e.href)}
@@ -203,7 +204,7 @@ export default function MiniDrawer() {
 									justifyContent: open ? "initial" : "center",
 									px: 2.5,
 								}}
-							>
+								>
 								<ListItemIcon
 									sx={{
 										minWidth: 0,
@@ -231,6 +232,9 @@ export default function MiniDrawer() {
 			>
 				<Routes>
 					<Route path="/contact" element={<Contact />} />
+				</Routes>
+				<Routes>
+					<Route path="/Chat" element={<Chat />} />
 				</Routes>
 			</Box>
 		</Box>

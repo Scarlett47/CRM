@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Title } from '@mui/icons-material'
 import { Button } from 'antd'
+import "./chat.css";
 import Avatar from '@mui/material/Avatar'
 
 export default function Chat() {
