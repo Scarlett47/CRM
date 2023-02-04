@@ -25,9 +25,10 @@ import PersonIcon from "@mui/icons-material/Person";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import GridViewIcon from "@mui/icons-material/GridView";
 import TuneIcon from "@mui/icons-material/Tune";
-import { Search, Settings } from "@mui/icons-material";
+// import { Chat, Search, Settings } from "@mui/icons-material";
 import { Input } from "@mui/material";
 import Contact from "./Pages/Contact";
+import  Chat  from "./Pages/Chat";
 import { Route, Routes, useNavigate } from "react-router";
 
 const drawerWidth = 240;
@@ -230,6 +231,7 @@ export default function MiniDrawer() {
 			>
 				<Routes>
 					<Route path="/contact" element={<Contact />} />
+					
 				</Routes>
 			</Box>
 		</Box>
@@ -240,5 +242,9 @@ const navItems = [
 	{
 		label: "Contact",
 		href: "/contact",
+	},
+	{
+		label: "Chat",
+		href: "/chat"
 	},
 ];
