@@ -28,7 +28,7 @@ import TuneIcon from "@mui/icons-material/Tune";
 // import { Chat, Search, Settings } from "@mui/icons-material";
 import { Input } from "@mui/material";
 import Contact from "./Pages/Contact";
-import  Chat  from "./Pages/Chat";
+// import  Chat  from "./Pages/Chat";
 import { Route, Routes, useNavigate } from "react-router";
 
 const drawerWidth = 240;
@@ -246,5 +246,9 @@ const navItems = [
 	{
 		label: "Chat",
 		href: "/chat"
+	},
+	{
+		label: "Dashboard",
+		href: "/dashboard"
 	},
 ];
