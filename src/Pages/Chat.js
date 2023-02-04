@@ -6,7 +6,6 @@ import Avatar from '@mui/material/Avatar'
 export default function Chat() {
     <p>fsdfsdfs</p>
   return (
-    <p>fdfsfs</p>,
     <div className="smallBox">
 						<div style={{ display: "flex", justifyContent: "space-between" }}>
 							<Title style={{ margin: 0, paddingLeft: 10 }} level={4}>
