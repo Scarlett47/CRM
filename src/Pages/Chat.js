@@ -1,13 +1,15 @@
 import * as React from 'react'
 import { Button } from 'antd'
+import {gray} from '@ant-design/colors'
 import Avatar from '@mui/material/Avatar'
 import "./chat.css";
 import { left, right } from '@popperjs/core';
 import { Progress, Space } from 'antd';
+import { light } from '@mui/material/styles/createPalette';
 
-
+<meta name="theme-color" content="#4285f4" />
 export default function Chat() {
-    <p>fsdfsdfs</p>
+    console.log(gray.primary)
     return (
         <div>
             <div className="smallBox">
@@ -93,9 +95,9 @@ export default function Chat() {
                     <p style={{ margin: 0, paddingLeft: 70, color: 'gray' }} level={4}>
                         Send benefit review by Sunday
                     </p>
-                    <Button type="primary" style={{ marginRight: 10, }}>
-                        Completed
-                    </Button>
+                    <Space wrap>
+                    </Space>
+                        <Progress type="circle" percent={100} width={25} content="#4285f4" style={{marginRight:"10px",}}/>
                 </div>
             </div>
 
